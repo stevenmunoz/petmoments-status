@@ -37,7 +37,11 @@ sites:
     maxResponseTime: 8000
 
 status-website:
-  cname: status.petmoments.app
+  # TEMPORARY until the DNS CNAME status -> stevenmunoz.github.io exists:
+  # served at https://stevenmunoz.github.io/petmoments-status/. Then restore
+  # `cname: status.petmoments.app` and drop baseUrl (see the main repo's status-page/).
+  # cname: status.petmoments.app
+  baseUrl: /petmoments-status
   logoUrl: https://petmoments.app/logo.png
   favicon: https://petmoments.app/favicon-32x32.png
   name: Pet Moments Status
