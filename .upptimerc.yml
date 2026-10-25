@@ -29,11 +29,9 @@ sites:
   # SPEC-120 uptime check `backend-callable` in Cloud Monitoring, which pages.
 
 status-website:
-  # TEMPORARY until the DNS CNAME status -> stevenmunoz.github.io exists:
-  # served at https://stevenmunoz.github.io/petmoments-status/. Then restore
-  # `cname: status.petmoments.app` and drop baseUrl (see the main repo's status-page/).
-  # cname: status.petmoments.app
-  baseUrl: /petmoments-status
+  # DNS: CNAME status -> stevenmunoz.github.io at GoDaddy (petmoments.app's
+  # DNS host, not Firebase). A custom domain serves from /, so no baseUrl.
+  cname: status.petmoments.app
   logoUrl: https://petmoments.app/logo.png
   favicon: https://petmoments.app/favicon-32x32.png
   name: Pet Moments Status
