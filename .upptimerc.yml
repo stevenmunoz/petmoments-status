@@ -24,17 +24,9 @@ sites:
     url: https://petmoments.app/share/smoke-test-token/
     maxResponseTime: 8000
 
-  # An unauthenticated POST answers 401 only if a function instance booted
-  # and ran our code. Same probe as SPEC-120 backend-callable.
-  - name: App and Pro backend
-    url: https://us-central1-petmoments-prod.cloudfunctions.net/checkUsernameAvailability
-    method: POST
-    body: '{"data":{}}'
-    headers:
-      - "Content-Type: application/json"
-    expectedStatusCodes:
-      - 401
-    maxResponseTime: 8000
+  # The backend (Cloud Functions) is NOT probed here on purpose: its URL shows
+  # the GCP project id and a function name. It stays monitored privately by the
+  # SPEC-120 uptime check `backend-callable` in Cloud Monitoring, which pages.
 
 status-website:
   # TEMPORARY until the DNS CNAME status -> stevenmunoz.github.io exists:
@@ -46,7 +38,7 @@ status-website:
   favicon: https://petmoments.app/favicon-32x32.png
   name: Pet Moments Status
   introTitle: "Pet Moments system status"
-  introMessage: "Live availability of the Pet Moments app, Pet Moments Pro and our website. Checked every 5 minutes from outside our own infrastructure."
+  introMessage: "Live availability of the Pet Moments website and Pet Moments Pro, checked from outside our own infrastructure."
   navbar:
     - title: Status
       href: /
