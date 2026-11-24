@@ -1,7 +1,7 @@
 url: https://petmoments.app/share/smoke-test-token/
-status: up
-code: 200
-responseTime: 144
-lastUpdated: 2026-11-23T23:04:13.069Z
+status: down
+code: 500
+responseTime: 595
+lastUpdated: 2026-11-24T20:58:48.381Z
 startTime: 2026-10-24T18:56:19.901Z
 generator: Upptime <https://github.com/upptime/upptime>
